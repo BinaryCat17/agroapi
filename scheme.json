@@ -1,0 +1,68 @@
+{
+    "Catalogs": {
+        "Suppliers": {
+            "name": "str"
+        },
+        "Sorts": {
+            "name": "str"
+        },
+        "CultivatedCrops": {
+            "name": "str"
+        },
+        "WorkYears": {
+            "name": "str"
+        },
+        "TechModels": {
+            "name": "str" 
+        },
+        "TreatmentTypes": {
+            "name": "str"
+        },
+        "WriteOffReason": {
+            "name": "str"
+        }
+    },
+
+    "Assets": {
+        "Warehouses": {
+            "name": "str"
+        },
+        "Fields": {
+            "name": "str",
+            "poly": "geo_poly"
+        },
+        "FieldYears": {
+            "field": "Fields",
+            "workYear": "WorkYears",
+            "cultivate": "CultivatedCrops"
+        },
+        "Employees": {
+            "name": "str"
+        }
+    },
+
+    "Operations": {
+        "WarehouseMovements": {
+            "from": "Warehouses",
+            "to": "Warehouses"
+        },
+        "Supplies": {
+            "to": "Warehouses",
+            "supplier": "Suppliers"
+        },
+        "WarehouseWriteOffs": {
+            "from": "Warehouses"
+
+        },
+        "Treatments": { 
+            "from": "Warehouses",
+            "fieldYear": "FieldYears",
+            "treatmentType": "TreatmentTypes"
+        },
+        "TechFillings": {
+            "from": "Warehouses",
+            "techModel": "TechModels",
+            "employee": "Employees"
+        }
+    }   
+}
